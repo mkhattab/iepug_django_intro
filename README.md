@@ -1,4 +1,4 @@
-iepug_django_intro
-==================
+IEPUG: Intro to Django
+======================
 
-IE Python User Group: Intro to Django
+Contains the presentation slides and CatGIFs project source code.
