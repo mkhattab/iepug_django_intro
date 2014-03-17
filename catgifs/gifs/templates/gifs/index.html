@@ -13,10 +13,16 @@
   <li>{{ message }}</li>
   {% endfor %}
   </ul>
-  {% if not form.is_bound or form.errors %}
+  <p><strong>Rate this GIF:</strong></p>
+  <form action="/rate/" method="POST">{% csrf_token %}
+    {{ rating_form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+  <br>
+  {% if not submission_form.is_bound or submission_form.errors %}
   <p><strong>Submit a gif:</strong></p>
   <form action="/" method="POST">{% csrf_token %}
-    {{ form.as_p }}
+    {{ submission_form.as_p }}
     <input type="submit" value="Submit">
   </form>
   {% endif %}
