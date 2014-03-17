@@ -7,5 +7,18 @@
 <body>
   <h1>{{ cat.description }}</h1>
   <img src="{{ cat.url }}">
+  <br><br>
+  <ul>
+  {% for message in messages %}
+  <li>{{ message }}</li>
+  {% endfor %}
+  </ul>
+  {% if not form.is_bound or form.errors %}
+  <p><strong>Submit a gif:</strong></p>
+  <form action="/" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+  {% endif %}
 </body>
 </html>
